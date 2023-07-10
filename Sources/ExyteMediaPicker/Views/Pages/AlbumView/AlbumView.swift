@@ -17,15 +17,16 @@ struct AlbumView: View {
     var shouldShowLoadingCell: Bool
     var selectionParamsHolder: SelectionParamsHolder
 
-    @State private var fullscreenItem: AssetMediaModel? {
-        didSet {
-            if let item = fullscreenItem {
-                currentFullscreenMedia = Media(source: item)
-            } else {
-                currentFullscreenMedia = nil
-            }
-        }
-    }
+    @State private var fullscreenItem: AssetMediaModel?
+//    {
+//        didSet {
+//            if let item = fullscreenItem {
+//                currentFullscreenMedia = Media(source: item)
+//            } else {
+//                currentFullscreenMedia = nil
+//            }
+//        }
+//    }
 
     var body: some View {
         if let title = viewModel.title {
@@ -96,26 +97,26 @@ private extension AlbumView {
             .frame(maxWidth: .infinity)
         }
         .background(theme.main.albumSelectionBackground)
-        .overlay {
-            if let item = fullscreenItem {
-                FullscreenContainer(
-                    isPresented: fullscreenPresentedBinding(),
-                    assetMediaModels: viewModel.assetMediaModels,
-                    selection: item.id,
-                    selectionParamsHolder: selectionParamsHolder
-                )
-            }
-        }
+//        .overlay {
+//            if let item = fullscreenItem {
+//                FullscreenContainer(
+//                    isPresented: fullscreenPresentedBinding(),
+//                    assetMediaModels: viewModel.assetMediaModels,
+//                    selection: item.id,
+//                    selectionParamsHolder: selectionParamsHolder
+//                )
+//            }
+//        }
     }
 
-    func fullscreenPresentedBinding() -> Binding<Bool> {
-        Binding(
-            get: { fullscreenItem != nil },
-            set: { value in
-                if value == false {
-                    fullscreenItem = nil
-                }
-            }
-        )
-    }
+//    func fullscreenPresentedBinding() -> Binding<Bool> {
+//        Binding(
+//            get: { fullscreenItem != nil },
+//            set: { value in
+//                if value == false {
+//                    fullscreenItem = nil
+//                }
+//            }
+//        )
+//    }
 }
