@@ -17,7 +17,7 @@ struct AlbumView: View {
     var shouldShowLoadingCell: Bool
     var selectionParamsHolder: SelectionParamsHolder
 
-    @State private var fullscreenItem: AssetMediaModel?
+//    @State private var fullscreenItem: AssetMediaModel?
 //    {
 //        didSet {
 //            if let item = fullscreenItem {
