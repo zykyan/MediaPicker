@@ -6,7 +6,7 @@ import Foundation
 import SwiftUI
 
 struct PermissionsActionView: View {
-
+    @Environment(\.mediaPickerTheme) private var theme
     let action: Action
     
     @State private var showSheet = false
@@ -38,13 +38,13 @@ private extension PermissionsActionView {
     func buildLibraryAction(_ action: PermissionsService.PhotoLibraryAction) -> some View {
         switch action {
         case .selectMore:
-            PermissionsErrorView(text: "Setup Photos access to see more photos here") {
+            PermissionsErrorView(text: theme.main.photosSelectMoreMsg) {
                 showSheet = true
             }
         case .authorize:
-            goToSettingsButton(text: "Allow Photos access in settings to see photos here")
+            goToSettingsButton(text: theme.main.photosAuthorizeMsg)
         case .unavailable:
-            PermissionsErrorView(text: "Sorry, Photos are not available.", action: nil)
+            PermissionsErrorView(text: theme.main.photosUnavailableMsg, action: nil)
         case .unknown:
             fatalError("Unknown permission status.")
         }
@@ -54,9 +54,9 @@ private extension PermissionsActionView {
     func buildCameraAction(_ action: PermissionsService.CameraAction) -> some View {
         switch action {
         case .authorize:
-            goToSettingsButton(text: "Allow Camera access in settings to see live preview")
+            goToSettingsButton(text: theme.main.cameraAuthorizeMsg)
         case .unavailable:
-            PermissionsErrorView(text: "Sorry, Camera is not available.", action: nil)
+            PermissionsErrorView(text: theme.main.cameraUnavailableMsg, action: nil)
         case .unknown:
             fatalError("Unknown permission status.")
         }

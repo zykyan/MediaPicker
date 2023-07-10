@@ -52,7 +52,7 @@ private extension AlbumView {
                 if viewModel.isLoading {
                     ProgressView()
                 } else if viewModel.assetMediaModels.isEmpty, !shouldShowLoadingCell {
-                    Text("Empty data")
+                    Text(theme.main.emptyText)
                         .font(.title3)
                 } else {
                     MediasGrid(viewModel.assetMediaModels) {
