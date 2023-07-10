@@ -37,7 +37,7 @@ struct FullscreenContainer: View {
         .overlay {
             if let selectedMediaModel = selectedMediaModel {
                 SelectIndicatorView(index: selectionServiceIndex, isFullscreen: true, canSelect: selectionService.canSelect(assetMediaModel: selectedMediaModel), selectionParamsHolder: selectionParamsHolder)
-                    .padding([.horizontal, .vertical], 20)
+                    .padding([.horizontal, .bottom], 20)
                     .contentShape(Rectangle())
                     .onTapGesture {
                         selectionService.onSelect(assetMediaModel: selectedMediaModel)
@@ -67,7 +67,7 @@ struct FullscreenContainer: View {
                 .tint(theme.selection.fullscreenTint)
                 .frame(width: 20, height: 20)
         }
-        .padding([.horizontal, .vertical], 20)
+        .padding([.horizontal, .bottom], 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)
     }
 }
