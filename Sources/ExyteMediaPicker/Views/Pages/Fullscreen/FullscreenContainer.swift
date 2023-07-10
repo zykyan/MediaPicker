@@ -66,7 +66,6 @@ struct FullscreenContainer: View {
                 .resizable()
                 .tint(theme.selection.fullscreenTint)
                 .frame(width: 20, height: 20)
-                .padding(16)
         }
         .padding([.horizontal, .vertical], 20)
         .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .topLeading)

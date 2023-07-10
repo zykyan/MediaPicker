@@ -66,9 +66,9 @@ private extension AlbumView {
                             selectionService.onSelect(assetMediaModel: assetMediaModel)
                         } content: {
                             Button {
-                                if fullscreenItem == nil {
-                                    fullscreenItem = assetMediaModel
-                                }
+//                                if fullscreenItem == nil {
+//                                    fullscreenItem = assetMediaModel
+//                                }
                             } label: {
                                 MediaCell(viewModel: MediaViewModel(assetMediaModel: assetMediaModel))
                             }
