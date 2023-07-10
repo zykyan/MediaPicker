@@ -66,6 +66,8 @@ private extension AlbumView {
                             selectionService.onSelect(assetMediaModel: assetMediaModel)
                         } content: {
                             Button {
+                                // This line of codes allow to preview the image in full screen
+                                // Disabling cause we don't need it 
 //                                if fullscreenItem == nil {
 //                                    fullscreenItem = assetMediaModel
 //                                }
